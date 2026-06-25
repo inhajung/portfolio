@@ -240,6 +240,21 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
 .about-slider-dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:2; }
 .about-slider-dots span { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.5); cursor:pointer; transition:background .3s; }
 .about-slider-dots span.active { background:#fff; }
+/* PROFILE INFO & SKILLS */
+.profile-info { display:grid; grid-template-columns:1fr 1fr; gap:.8rem 2rem; margin-bottom:2rem; }
+.profile-info-item { display:flex; align-items:flex-start; gap:.8rem; font-size:.9rem; }
+.profile-info-item i { width:36px; height:36px; background:var(--blue-light); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--blue); font-size:.85rem; flex-shrink:0; margin-top:.1rem; }
+.profile-info-item .info-label { color:var(--text-muted); font-size:.75rem; margin-bottom:.15rem; }
+.profile-info-item .info-value { font-weight:600; color:var(--dark); font-size:.85rem; line-height:1.4; }
+
+.skills-section { margin-bottom:2rem; }
+.skills-section-title { font-size:.8rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--blue); margin-bottom:1rem; }
+.skill-bar-item { margin-bottom:.9rem; }
+.skill-bar-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
+.skill-bar-name { font-size:.82rem; font-weight:500; color:var(--dark); }
+.skill-bar-score { font-size:.75rem; color:var(--text-muted); }
+.skill-bar-track { height:6px; background:var(--bg-gray); border-radius:100px; overflow:hidden; }
+.skill-bar-fill { height:100%; border-radius:100px; background:var(--blue-gradient); transition:width 1s ease; }
 </style>
 </head>
 <body>
@@ -266,7 +281,6 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
       <p class="hero-desc">화주로서 공급망 전체를 경험한 글로벌 B2B 영업인.<br>고객이 사는 건 제품이 아니라 솔루션입니다.</p>
       <div class="hero-socials">
         <a href="mailto:unod1465@naver.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
     <div class="hero-right">
@@ -283,7 +297,7 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
     <div class="about-photo fade-up">
       <div class="about-slider" id="aboutSlider">
   <div class="about-slider-track" id="aboutTrack">
-    <img src="photo1.jpeg" alt="정인하">
+    <img src="photo01.jpeg" alt="정인하">
     <img src="photo2.png" alt="바이어 상담">
   </div>
   <div class="about-slider-dots">
@@ -303,24 +317,67 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
   해외 바이어 방한 시에도 영어 동시통역과 상담을 직접 리딩했습니다.<br><br>
   영업의 현장부터 사후 실무까지, 고객사의 니즈를 함께 고민하고 해결하는 솔루션 파트너입니다.
 </p>
-      <div class="about-info fade-up">
-        <div class="about-info-item">
-          <i class="fas fa-building"></i>
-          <div><div class="info-label">소속</div><div class="info-value">(주)삼성인터네셔널</div></div>
-        </div>
-        <div class="about-info-item">
-          <i class="fas fa-globe-asia"></i>
-          <div><div class="info-label">수출 국가</div><div class="info-value">4개국</div></div>
-        </div>
-        <div class="about-info-item">
-          <i class="fas fa-envelope"></i>
-          <div><div class="info-label">Email</div><div class="info-value">unod1465@naver.com</div></div>
-        </div>
-        <div class="about-info-item">
-          <i class="fas fa-dollar-sign"></i>
-          <div><div class="info-label">연간 계약</div><div class="info-value">USD 200,000+</div></div>
-        </div>
-      </div>
+      <!-- 프로필 정보 -->
+<div class="profile-info fade-up">
+  <div class="profile-info-item">
+    <i class="fas fa-user"></i>
+    <div><div class="info-label">이름</div><div class="info-value">정인하 (Inha Jung)</div></div>
+  </div>
+  <div class="profile-info-item">
+    <i class="fas fa-birthday-cake"></i>
+    <div><div class="info-label">생년월일</div><div class="info-value">2000년 3월 28일</div></div>
+  </div>
+  <div class="profile-info-item">
+    <i class="fas fa-graduation-cap"></i>
+    <div><div class="info-label">학력</div><div class="info-value">부산대학교 경영학과<br>2025년 2월 졸업</div></div>
+  </div>
+  <div class="profile-info-item">
+    <i class="fas fa-briefcase"></i>
+    <div><div class="info-label">경력</div><div class="info-value">(주)삼성인터네셔널<br>브랜드총괄 주임 · 2024.07~2026.06</div></div>
+  </div>
+  <div class="profile-info-item">
+    <i class="fas fa-envelope"></i>
+    <div><div class="info-label">이메일</div><div class="info-value">unod1465@naver.com</div></div>
+  </div>
+  <div class="profile-info-item">
+    <i class="fas fa-map-marker-alt"></i>
+    <div><div class="info-label">거주지</div><div class="info-value">부산광역시</div></div>
+  </div>
+</div>
+
+<!-- 스킬 레벨 -->
+<div class="skills-section fade-up">
+  <div class="skills-section-title">Tools & Skills</div>
+
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">Word · PowerPoint</span><span class="skill-bar-score">5 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">Excel</span><span class="skill-bar-score">4 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">Adobe Photoshop · Illustrator</span><span class="skill-bar-score">5 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">Figma · Canva</span><span class="skill-bar-score">4 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">Notion</span><span class="skill-bar-score">5 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">ChatGPT · Gemini · Claude</span><span class="skill-bar-score">5 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
+  </div>
+  <div class="skill-bar-item">
+    <div class="skill-bar-top"><span class="skill-bar-name">GitHub</span><span class="skill-bar-score">3 / 5</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:60%"></div></div>
+  </div>
+</div>
       <a href="mailto:unod1465@naver.com" class="btn-primary fade-up">
         <i class="fas fa-paper-plane"></i> 연락하기
       </a>
@@ -842,6 +899,21 @@ document.addEventListener('click', e => {
   window.goSlide = function(i){ cur = i; update(); };
   setInterval(() => { cur = (cur + 1) % total; update(); }, 4000);
 })();
+// ── Skill Bar Animation ──
+const skillObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { bar.style.width = w; });
+        });
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-section').forEach(el => skillObs.observe(el));
 </script>
 
 </body>
