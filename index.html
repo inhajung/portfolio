@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정인하 | 글로벌 B2B 영업 포트폴리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --blue:#1a73e8; --blue-dark:#1557b0; --blue-light:#e8f0fe;
+  --blue-gradient:linear-gradient(135deg,#1a73e8,#4fc3f7);
+  --dark:#222; --text:#333; --text-light:#666; --text-muted:#999;
+  --bg:#fff; --bg-gray:#f5f7fa; --border:#e0e0e0;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-hover:0 8px 30px rgba(26,115,232,0.15);
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Noto Sans KR','Poppins',sans-serif; color:var(--text); background:var(--bg); line-height:1.7; overflow-x:hidden; }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:70px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; transition:box-shadow .3s; }
+nav.scrolled { box-shadow:0 2px 20px rgba(0,0,0,0.08); }
+.nav-logo { font-family:'Poppins',sans-serif; font-weight:700; font-size:1.3rem; color:var(--blue); }
+.nav-links { list-style:none; display:flex; gap:2.2rem; }
+.nav-links a { text-decoration:none; color:var(--text-light); font-size:.9rem; font-weight:500; transition:color .2s; position:relative; }
+.nav-links a:hover { color:var(--blue); }
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--blue); transition:width .3s; }
+.nav-links a:hover::after { width:100%; }
+.nav-toggle { display:none; background:none; border:none; font-size:1.5rem; color:var(--text); cursor:pointer; }
+
+/* HERO */
+.hero { min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; padding-top:70px; }
+.hero-bg-pattern { position:absolute; inset:0; background:linear-gradient(135deg,var(--blue) 0%,#2196f3 45%,transparent 45.5%); z-index:0; }
+.hero-content { position:relative; z-index:1; width:100%; max-width:1200px; margin:0 auto; padding:4rem 5%; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem; }
+.hero-left { color:#fff; }
+.hero-hello { display:inline-block; background:rgba(255,255,255,0.2); padding:.3rem 1.2rem; border-radius:100px; font-size:.85rem; font-weight:500; margin-bottom:1.5rem; backdrop-filter:blur(4px); }
+.hero-title { font-family:'Poppins',sans-serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:800; line-height:1.25; margin-bottom:1.2rem; }
+.hero-title .typed { color:#fff; border-right:3px solid #fff; padding-right:4px; animation:blink 1s step-end infinite; }
+@keyframes blink { 50%{border-color:transparent;} }
+.hero-desc { font-size:1rem; line-height:1.8; opacity:.9; margin-bottom:2rem; font-weight:300; }
+.hero-socials { display:flex; gap:.8rem; }
+.hero-socials a { width:40px; height:40px; border:2px solid rgba(255,255,255,0.4); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:.9rem; text-decoration:none; transition:background .3s,border-color .3s; }
+.hero-socials a:hover { background:rgba(255,255,255,0.2); border-color:#fff; }
+.hero-right { display:flex; justify-content:center; align-items:center; }
+.hero-image-wrapper { width:340px; height:400px; background:var(--bg-gray); border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.15); }
+.hero-image-wrapper img { width:100%; height:100%; object-fit:cover; }
+
+/* ABOUT */
+.about { padding:6rem 5%; max-width:1200px; margin:0 auto; display:grid; grid-template-columns:380px 1fr; gap:4rem; align-items:center; }
+.about-photo { position:relative; }
+.about-photo-frame { width:100%; aspect-ratio:3/4; background:var(--bg-gray); border-radius:12px; overflow:hidden; position:relative; z-index:1; }
+.about-photo-frame img { width:100%; height:100%; object-fit:cover; }
+.about-photo::before { content:''; position:absolute; top:-12px; left:-12px; width:60%; height:60%; border:4px solid var(--blue); border-radius:12px; z-index:0; }
+.about-label { font-size:.8rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--blue); margin-bottom:.5rem; }
+.about-title { font-size:1.8rem; font-weight:700; margin-bottom:1rem; line-height:1.35; color:var(--dark); }
+.about-desc { color:var(--text-light); font-size:.95rem; margin-bottom:2rem; line-height:1.8; }
+.about-info { display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem; margin-bottom:2rem; }
+.about-info-item { display:flex; align-items:center; gap:.8rem; font-size:.9rem; }
+.about-info-item i { width:36px; height:36px; background:var(--blue-light); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--blue); font-size:.85rem; flex-shrink:0; }
+.about-info-item .info-label { color:var(--text-muted); font-size:.8rem; }
+.about-info-item .info-value { font-weight:600; color:var(--dark); font-size:.88rem; }
+.btn-primary { display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 2rem; background:var(--blue-gradient); color:#fff; border:none; border-radius:100px; font-size:.9rem; font-weight:600; text-decoration:none; cursor:pointer; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 15px rgba(26,115,232,0.3); }
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(26,115,232,0.4); }
+
+/* SECTION COMMON */
+.section { padding:6rem 5%; }
+.section-gray { background:var(--bg-gray); }
+.section-inner { max-width:1200px; margin:0 auto; }
+.section-header { text-align:center; margin-bottom:3.5rem; }
+.section-badge { display:inline-block; padding:.3rem 1rem; background:var(--blue-light); color:var(--blue); font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; border-radius:100px; margin-bottom:.8rem; }
+.section-header h2 { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--dark); margin-bottom:.8rem; }
+.section-header p { color:var(--text-muted); font-size:.92rem; max-width:600px; margin:0 auto; }
+
+/* SKILLS */
+.skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.skill-card { background:#fff; border-radius:16px; padding:2rem 1.5rem; text-align:center; border:1px solid var(--border); transition:transform .3s,box-shadow .3s,border-color .3s; position:relative; overflow:hidden; cursor:pointer; }
+.skill-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--blue-gradient); transform:scaleX(0); transition:transform .3s; }
+.skill-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-hover); border-color:transparent; }
+.skill-card:hover::before { transform:scaleX(1); }
+.skill-icon-wrap { width:56px; height:56px; background:var(--blue-light); border-radius:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; font-size:1.4rem; color:var(--blue); transition:background .3s,color .3s; }
+.skill-card:hover .skill-icon-wrap { background:var(--blue); color:#fff; }
+.skill-card h3 { font-size:.95rem; font-weight:700; margin-bottom:.6rem; color:var(--dark); }
+.skill-card p { font-size:.82rem; color:var(--text-light); line-height:1.65; }
+.skill-card .click-hint { display:block; margin-top:.8rem; font-size:.75rem; color:var(--blue); opacity:.6; }
+
+/* PROJECTS */
+.project-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:2.5rem; margin-bottom:1.8rem; transition:transform .3s,box-shadow .3s; cursor:pointer; position:relative; overflow:hidden; }
+.project-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+.project-card.featured { background:linear-gradient(135deg,#eef4ff 0%,#f0faf7 100%); border:2px solid rgba(26,115,232,0.2); }
+.project-head { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.project-flag { font-size:2.2rem; line-height:1; }
+.project-flag img { width:40px; height:30px; object-fit:cover; border-radius:4px; box-shadow:0 1px 3px rgba(0,0,0,0.15); }
+.project-title { font-size:1.2rem; font-weight:700; color:var(--dark); }
+.project-sub { font-size:.85rem; color:var(--text-muted); margin-top:.15rem; }
+.metrics-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+.metric-box { background:var(--bg-gray); border-radius:12px; padding:1.2rem; text-align:center; border:1px solid transparent; transition:border-color .2s; }
+.project-card:hover .metric-box { border-color:var(--border); }
+.metric-box .val { font-family:'Poppins',sans-serif; font-size:1.4rem; font-weight:700; color:var(--blue); }
+.metric-box .lab { font-size:.78rem; color:var(--text-muted); margin-top:.2rem; }
+.project-detail-list { list-style:none; }
+.project-detail-list li { font-size:.9rem; color:var(--text-light); padding:.4rem 0 .4rem 1.6rem; position:relative; }
+.project-detail-list li::before { content:''; position:absolute; left:0; top:50%; width:8px; height:8px; border-radius:50%; background:var(--blue-gradient); transform:translateY(-50%); }
+.click-hint-card { text-align:right; margin-top:.8rem; font-size:.75rem; color:var(--blue); opacity:.5; }
+
+/* Growth Chart */
+.growth-chart { display:flex; align-items:flex-end; gap:2.5rem; justify-content:center; height:160px; margin-top:2rem; padding:0 2rem; }
+.growth-col { display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1; max-width:120px; }
+.growth-val { font-family:'Poppins'; font-size:.9rem; font-weight:700; }
+.growth-bar { width:100%; border-radius:10px 10px 4px 4px; }
+.growth-label { font-size:.8rem; color:var(--text-muted); font-weight:500; }
+
+/* MODAL */
+.modal-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.5); backdrop-filter:blur(4px); justify-content:center; align-items:center; padding:2rem; }
+.modal-overlay.active { display:flex; }
+.modal { background:#fff; border-radius:20px; max-width:720px; width:100%; max-height:85vh; overflow-y:auto; position:relative; animation:modalIn .3s ease; }
+@keyframes modalIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+.modal-close { position:absolute; top:1rem; right:1rem; background:var(--bg-gray); border:none; width:36px; height:36px; border-radius:50%; font-size:1.1rem; cursor:pointer; color:var(--text-muted); display:flex; align-items:center; justify-content:center; transition:background .2s; z-index:2; }
+.modal-close:hover { background:var(--border); }
+.modal-header { padding:2rem 2.5rem 1.5rem; border-bottom:1px solid var(--border); }
+.modal-header h3 { font-size:1.3rem; font-weight:700; color:var(--dark); margin-bottom:.5rem; }
+.modal-summary { font-size:.92rem; color:var(--blue); font-weight:500; background:var(--blue-light); padding:.5rem 1rem; border-radius:8px; display:inline-block; }
+.modal-body { padding:2rem 2.5rem; }
+.modal-body h4 { font-size:1rem; font-weight:700; color:var(--dark); margin:1.5rem 0 .8rem; }
+.modal-body h4:first-child { margin-top:0; }
+.modal-body ul { list-style:none; }
+.modal-body ul li { font-size:.9rem; color:var(--text-light); padding:.35rem 0 .35rem 1.4rem; position:relative; line-height:1.7; }
+.modal-body ul li::before { content:''; position:absolute; left:0; top:.85rem; width:6px; height:6px; border-radius:50%; background:var(--blue); }
+
+/* Timeline */
+.timeline { position:relative; padding-left:2rem; margin:1rem 0; }
+.timeline::before { content:''; position:absolute; left:7px; top:0; bottom:0; width:2px; background:var(--border); }
+.tl-item { position:relative; padding-bottom:1.5rem; }
+.tl-item:last-child { padding-bottom:0; }
+.tl-dot { position:absolute; left:-2rem; top:.35rem; width:16px; height:16px; border-radius:50%; background:var(--blue-gradient); border:3px solid #fff; box-shadow:0 0 0 2px var(--blue); }
+.tl-date { font-size:.78rem; color:var(--blue); font-weight:600; margin-bottom:.2rem; }
+.tl-text { font-size:.88rem; color:var(--text-light); line-height:1.6; }
+
+/* Modal metrics */
+.modal-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:.8rem; margin:1rem 0; }
+.modal-metric { background:var(--bg-gray); border-radius:10px; padding:1rem; text-align:center; }
+.modal-metric .val { font-family:'Poppins'; font-size:1.2rem; font-weight:700; color:var(--blue); }
+.modal-metric .lab { font-size:.75rem; color:var(--text-muted); margin-top:.2rem; }
+
+/* Episode box */
+.episode-box { background:linear-gradient(135deg,#f8f9ff,#f0f7ff); border-left:4px solid var(--blue); border-radius:0 12px 12px 0; padding:1.2rem 1.5rem; margin-top:1rem; }
+.episode-box .ep-title { font-size:.85rem; font-weight:700; color:var(--blue); margin-bottom:.4rem; }
+.episode-box .ep-text { font-size:.85rem; color:var(--text-light); line-height:1.7; }
+
+/* Modal gallery */
+.modal-gallery { display:grid; gap:.8rem; margin:1rem 0; }
+.modal-gallery.cols-2 { grid-template-columns:1fr 1fr; }
+.modal-gallery.cols-3 { grid-template-columns:1fr 1fr 1fr; }
+.modal-gallery.cols-4 { grid-template-columns:1fr 1fr 1fr 1fr; }
+.modal-gallery img { width:100%; height:auto; border-radius:10px; border:1px solid var(--border); cursor:pointer; transition:transform .2s; }
+.modal-gallery img:hover { transform:scale(1.02); }
+.modal-gallery .flow-arrow { display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:var(--blue); }
+.modal-flow { display:flex; align-items:center; gap:.6rem; margin:1rem 0; flex-wrap:wrap; }
+.modal-flow img { height:160px; width:auto; max-width:200px; object-fit:cover; border-radius:10px; border:1px solid var(--border); }
+.modal-flow .arrow { font-size:1.3rem; color:var(--blue); flex-shrink:0; }
+.modal-subhead { font-size:.88rem; font-weight:600; color:var(--dark); margin:1.2rem 0 .5rem; display:flex; align-items:center; gap:.5rem; }
+.modal-subhead i { color:var(--blue); }
+.modal-link { display:inline-flex; align-items:center; gap:.4rem; color:var(--blue); font-size:.85rem; font-weight:500; text-decoration:none; margin:.3rem 0; }
+.modal-link:hover { text-decoration:underline; }
+@media(max-width:600px){
+  .modal-gallery.cols-3,.modal-gallery.cols-4{grid-template-columns:1fr 1fr;}
+  .modal-flow{flex-direction:column;}
+  .modal-flow .arrow{transform:rotate(90deg);}
+  .modal-flow img{max-width:100%;height:auto;}
+}
+
+/* BACK TO TOP */
+.back-to-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:var(--blue-gradient); color:#fff; border:none; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(26,115,232,0.3); opacity:0; transform:translateY(10px); transition:opacity .3s,transform .3s; z-index:99; }
+.back-to-top.visible { opacity:1; transform:translateY(0); }
+.back-to-top:hover { box-shadow:0 6px 20px rgba(26,115,232,0.5); }
+
+/* LIGHTBOX */
+.lightbox-overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; cursor:zoom-out; padding:2rem; }
+.lightbox-overlay.active { display:flex; }
+.lightbox-overlay img { max-width:90vw; max-height:90vh; object-fit:contain; border-radius:8px; animation:modalIn .3s ease; }
+
+/* MODAL SCROLLBAR */
+.modal::-webkit-scrollbar { width:6px; }
+.modal::-webkit-scrollbar-track { background:transparent; }
+.modal::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+.modal::-webkit-scrollbar-thumb:hover { background:var(--text-muted); }
+
+/* CANTON GALLERY HOVER */
+.canton-gallery img { transition:transform .3s,box-shadow .3s; cursor:pointer; }
+.canton-gallery img:hover { transform:scale(1.03); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
+
+/* PROJECT CARD ALTERNATING ACCENT */
+.project-card:nth-child(even):not(.featured) { border-left:4px solid var(--blue); }
+.project-card:nth-child(odd):not(.featured) { border-left:4px solid #4fc3f7; }
+
+/* FOOTER */
+footer { background:var(--dark); color:rgba(255,255,255,0.7); text-align:center; padding:4rem 5% 2rem; }
+footer h2 { color:#fff; font-size:1.8rem; margin-bottom:.5rem; }
+footer p { font-size:.9rem; margin-bottom:2rem; }
+.footer-btn { display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 2.5rem; background:var(--blue-gradient); color:#fff; border-radius:100px; text-decoration:none; font-weight:600; font-size:.9rem; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 15px rgba(26,115,232,0.3); }
+.footer-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(26,115,232,0.4); }
+.footer-bottom { margin-top:3rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); font-size:.8rem; }
+
+/* ANIMATIONS */
+.fade-up { opacity:0; transform:translateY(30px); transition:opacity .7s ease,transform .7s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+.fade-up.d1 { transition-delay:.1s; } .fade-up.d2 { transition-delay:.2s; } .fade-up.d3 { transition-delay:.3s; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-content{grid-template-columns:1fr;text-align:center;gap:2rem;}
+  .hero-socials{justify-content:center;}
+  .hero-right{order:-1;}
+  .hero-image-wrapper{width:260px;height:300px;}
+  .about{grid-template-columns:1fr;text-align:center;gap:2rem;}
+  .about-photo{max-width:300px;margin:0 auto;}
+  .about-photo::before{display:none;}
+  .about-info{justify-items:center;}
+  .skills-grid{grid-template-columns:repeat(2,1fr);}
+  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem 5%;gap:1rem;border-bottom:1px solid var(--border);box-shadow:var(--shadow);}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:block;}
+  .growth-chart{gap:1.5rem;height:120px;}
+  .modal{margin:1rem;max-height:90vh;}
+  .modal-header,.modal-body{padding:1.5rem;}
+}
+@media(max-width:600px){
+  .about-info{grid-template-columns:1fr;}
+  .metrics-row{grid-template-columns:1fr 1fr;}
+  .skills-grid{grid-template-columns:1fr;}
+  .section{padding:4rem 1.2rem;}
+  .project-card{padding:1.5rem;}
+  .canton-gallery{grid-template-columns:1fr !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Inha Jung</div>
+  <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">역량</a></li>
+    <li><a href="#projects">프로젝트</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-hello">Hello !</span>
+      <h1 class="hero-title">글로벌 B2B<br><span class="typed" id="typed-text"></span></h1>
+      <p class="hero-desc">화주로서 공급망 전체를 경험한 글로벌 B2B 영업인.<br>고객의 문제를 현장에서 먼저 겪어본 사람입니다.</p>
+      <div class="hero-socials">
+        <a href="mailto:unod1465@naver.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-image-wrapper">
+        <img src="profile.png" alt="정인하 프로필">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about">
+    <div class="about-photo fade-up">
+      <div class="about-photo-frame">
+        <img src="profile.png" alt="정인하">
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-label fade-up">About Me</div>
+      <h2 class="about-title fade-up">4개국 수출을 개척한<br>글로벌 영업 전문가</h2>
+      <p class="about-desc fade-up">
+        영어 프리토킹 기반으로 해외 바이어 발굴부터 계약 체결까지 전 과정을 수행합니다.
+        캔톤페어 3회 연속 참가하며 현장 샘플 매출을 800만 원에서 4,900만 원으로 성장시켰고,
+        5개 브랜드 60종 제품 기획·출시, AI 도구를 직접 구축하여 업무 시간을 67% 단축했습니다.
+        브라질 ANVISA 인허가를 단독 리딩하고, 영국 비건 소사이어티 3년 계약을 체결하는 등
+        수출 실무 전반을 주도적으로 수행합니다.
+      </p>
+      <div class="about-info fade-up">
+        <div class="about-info-item">
+          <i class="fas fa-building"></i>
+          <div><div class="info-label">소속</div><div class="info-value">(주)삼성인터네셔널</div></div>
+        </div>
+        <div class="about-info-item">
+          <i class="fas fa-globe-asia"></i>
+          <div><div class="info-label">수출 국가</div><div class="info-value">4개국</div></div>
+        </div>
+        <div class="about-info-item">
+          <i class="fas fa-envelope"></i>
+          <div><div class="info-label">Email</div><div class="info-value">unod1465@naver.com</div></div>
+        </div>
+        <div class="about-info-item">
+          <i class="fas fa-dollar-sign"></i>
+          <div><div class="info-label">연간 계약</div><div class="info-value">USD 200,000+</div></div>
+        </div>
+      </div>
+      <a href="mailto:unod1465@naver.com" class="btn-primary fade-up">
+        <i class="fas fa-paper-plane"></i> 연락하기
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS (6개) -->
+<section id="skills" class="section section-gray">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-badge">What I Do</span>
+      <h2>핵심 역량</h2>
+      <p>글로벌 영업부터 브랜드 기획, AI 활용까지 — 현장에서 검증된 6가지 실무 역량</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card fade-up d1" onclick="openModal('skill-1')">
+        <div class="skill-icon-wrap"><i class="fas fa-handshake"></i></div>
+        <h3>글로벌 영업·협상</h3>
+        <p>캔톤페어 3회, 줌미팅 수출상담, 바이어 방한 동시통역, MOU 체결</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+      <div class="skill-card fade-up d2" onclick="openModal('skill-2')">
+        <div class="skill-icon-wrap"><i class="fas fa-shipping-fast"></i></div>
+        <h3>수출 실무 전반</h3>
+        <p>MOQ·PI·견적서, 국가별 인허가(ANVISA·BPOM·비건소사이어티), 마케팅 지원</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+      <div class="skill-card fade-up d3" onclick="openModal('skill-3')">
+        <div class="skill-icon-wrap"><i class="fas fa-store"></i></div>
+        <h3>전시회 기획·VMD</h3>
+        <p>캔톤페어 매장형 부스 전환, POP 디자인·발주, 팜플렛 기획</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+      <div class="skill-card fade-up d1" onclick="openModal('skill-4')">
+        <div class="skill-icon-wrap"><i class="fas fa-globe"></i></div>
+        <h3>해외 지사·유통사 지원</h3>
+        <p>베트남 지사 교육, 중국 요요소 VMD 기획, 마케팅·쇼핑몰 운영 지원</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+      <div class="skill-card fade-up d2" onclick="openModal('skill-5')">
+        <div class="skill-icon-wrap"><i class="fas fa-cogs"></i></div>
+        <h3>프로세스 구축·자산화</h3>
+        <p>4개국어 번역 품질 개선, 노션 자료실, AI 문안 생성 사이트 직접 제작</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+      <div class="skill-card fade-up d3" onclick="openModal('skill-6')">
+        <div class="skill-icon-wrap"><i class="fas fa-palette"></i></div>
+        <h3>브랜드·콘텐츠 기획</h3>
+        <p>5개 브랜드 60종 기획·출시, 디즈니 IP 콜라보, 쿠팡 단품 3,000만원</p>
+        <span class="click-hint">클릭하여 상세보기 →</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section section-gray">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-badge">Projects</span>
+      <h2>대표 프로젝트와 결과</h2>
+    </div>
+
+    <!-- Canton Fair -->
+    <div class="project-card featured fade-up" onclick="openModal('proj-canton')">
+      <div class="project-head">
+        <div class="project-flag">🎪</div>
+        <div>
+          <div class="project-title">캔톤페어 VMD·부스 전시 기획 및 현장 영업</div>
+          <div class="project-sub">광저우 캔톤페어 3회 연속 참가 · VMD 기획 · 200명+ 바이어 응대</div>
+        </div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">6.1배</div><div class="lab">매출 성장</div></div>
+        <div class="metric-box"><div class="val">200+</div><div class="lab">바이어 직접 응대</div></div>
+        <div class="metric-box"><div class="val">4개국</div><div class="lab">신규 수출 개척</div></div>
+        <div class="metric-box"><div class="val">2배</div><div class="lab">부스 규모 확장</div></div>
+      </div>
+      <div class="canton-gallery" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;">
+        <img src="canton1.jpg" alt="캔톤페어 바이어 응대" style="width:100%; height:340px; object-fit:cover; object-position:top; border-radius:12px;">
+        <img src="canton2.jpg" alt="캔톤페어 제품 설명" style="width:100%; height:340px; object-fit:cover; object-position:top; border-radius:12px;">
+        <img src="canton3.jpg" alt="캔톤페어 현장 영업" style="width:100%; height:340px; object-fit:cover; object-position:top; border-radius:12px;">
+      </div>
+      <div class="growth-chart">
+        <div class="growth-col"><div class="growth-val" style="color:var(--text-muted);">800만</div><div class="growth-bar" style="height:16%;background:#bbb;"></div><div class="growth-label">기존</div></div>
+        <div class="growth-col"><div class="growth-val" style="color:var(--blue);">1,400만</div><div class="growth-bar" style="height:29%;background:var(--blue);"></div><div class="growth-label">1회차</div></div>
+        <div class="growth-col"><div class="growth-val" style="color:var(--blue);">1,700만</div><div class="growth-bar" style="height:35%;background:var(--blue);"></div><div class="growth-label">2회차</div></div>
+        <div class="growth-col"><div class="growth-val" style="color:#00a86b;">4,900만</div><div class="growth-bar" style="height:100%;background:linear-gradient(180deg,#00a86b,#1a73e8);"></div><div class="growth-label">3회차</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+    <!-- UAE -->
+    <div class="project-card fade-up" onclick="openModal('proj-uae')">
+      <div class="project-head">
+        <div class="project-flag"><img src="https://flagcdn.com/w80/ae.png" alt="UAE"></div>
+        <div><div class="project-title">UAE — Enough Glow</div><div class="project-sub">아랍권 7개국 독점 유통 계약</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">USD 100K</div><div class="lab">연간 독점 유통 계약</div></div>
+        <div class="metric-box"><div class="val">22 SKU</div><div class="lab">2차 계약 규모</div></div>
+        <div class="metric-box"><div class="val">14,500</div><div class="lab">유닛 (2차 발주)</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+    <!-- Libya -->
+    <div class="project-card fade-up" onclick="openModal('proj-libya')">
+      <div class="project-head">
+        <div class="project-flag"><img src="https://flagcdn.com/w80/ly.png" alt="리비아"></div>
+        <div><div class="project-title">리비아 — Advanced HealthCare</div><div class="project-sub">L/C → T/T 결제 조건 협상 타결</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">USD 100K</div><div class="lab">연간 독점 유통 계약</div></div>
+        <div class="metric-box"><div class="val">24 SKU</div><div class="lab">초도 오더</div></div>
+        <div class="metric-box"><div class="val">USD 32,181</div><div class="lab">1차 오더 금액</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+    <!-- Brazil -->
+    <div class="project-card fade-up" onclick="openModal('proj-brazil')">
+      <div class="project-head">
+        <div class="project-flag"><img src="https://flagcdn.com/w80/br.png" alt="브라질"></div>
+        <div><div class="project-title">브라질 — Nutrimax International</div><div class="project-sub">시카·여드름 케어 라인업 역제안 + ANVISA 단독 리딩</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">4 SKU</div><div class="lab">초도 수출</div></div>
+        <div class="metric-box"><div class="val">4,000</div><div class="lab">유닛</div></div>
+        <div class="metric-box"><div class="val">24종</div><div class="lab">추가 샘플</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+    <!-- Mexico -->
+    <div class="project-card fade-up" onclick="openModal('proj-mexico')">
+      <div class="project-head">
+        <div class="project-flag"><img src="https://flagcdn.com/w80/mx.png" alt="멕시코"></div>
+        <div><div class="project-title">멕시코 — Pame Pérez clínica &amp; Spa</div><div class="project-sub">1차 → 2차 오더 수량 2배 확대</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">4 SKU</div><div class="lab">1차 오더</div></div>
+        <div class="metric-box"><div class="val">4,000</div><div class="lab">1차 유닛</div></div>
+        <div class="metric-box"><div class="val">2배</div><div class="lab">2차 볼륨 확대</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+    <!-- UK -->
+    <div class="project-card fade-up" onclick="openModal('proj-uk')">
+      <div class="project-head">
+        <div class="project-flag"><img src="https://flagcdn.com/w80/gb.png" alt="영국"></div>
+        <div><div class="project-title">영국 — Oskiino</div><div class="project-sub">마이크로니들링 특허 기기 전용 스킨케어 ODM</div></div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric-box"><div class="val">12종</div><div class="lab">런칭 라인업 ODM</div></div>
+        <div class="metric-box"><div class="val">5종</div><div class="lab">샘플링 완료</div></div>
+      </div>
+      <div class="click-hint-card">클릭하여 상세보기 →</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0})"><i class="fas fa-arrow-up"></i></button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="this.classList.remove('active')">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <h2>함께 일하고 싶으시다면</h2>
+  <p>새로운 기회에 대해 이야기 나누고 싶습니다.</p>
+  <a href="mailto:unod1465@naver.com" class="footer-btn"><i class="fas fa-envelope"></i> unod1465@naver.com</a>
+  <div class="footer-bottom">&copy; 2026 정인하 (Inha Jung). All rights reserved.</div>
+</footer>
+
+<!-- ═══════ MODALS ═══════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-header"><h3 id="modal-title"></h3><div class="modal-summary" id="modal-summary"></div></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ── Typing Effect ──
+(function(){
+  const words=['글로벌 B2B 영업인','화주 출신 수출 전문가','솔루션 세일즈 전문가'];
+  const el=document.getElementById('typed-text');
+  let wi=0,ci=0,del=false;
+  function tick(){
+    const w=words[wi];
+    el.textContent=w.substring(0,ci);
+    if(!del){ci++;if(ci>w.length){setTimeout(()=>{del=true;tick();},2000);return;}}
+    else{ci--;if(ci<0){ci=0;del=false;wi=(wi+1)%words.length;}}
+    setTimeout(tick,del?50:120);
+  }
+  tick();
+})();
+
+// ── Scroll & Nav ──
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30);});
+document.querySelector('.nav-toggle').addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('open');});
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));});
+
+// ── Modal Data ──
+const modals = {
+  'skill-1': {
+    title: '글로벌 영업·협상',
+    summary: '캔톤페어 현장부터 CEO 방한 미팅까지 — 영어로 직접 설득하고 계약을 만듭니다.',
+    body: `
+      <h4>주요 활동</h4>
+      <ul>
+        <li>광저우 캔톤페어 3회 연속 참가, 200명+ 글로벌 바이어 영어 직접 응대</li>
+        <li>줌 미팅 기반 수출 상담 진행 (멕시코, 브라질 등)</li>
+        <li>바이어 방한 동시통역 및 미팅 리딩: 영국 Oskiino CEO, 오만 바이어 2인, 멕시코 Pame Pérez CEO, 브라질 바이어 8인</li>
+        <li>MOU 체결 및 독점 유통 계약 리딩</li>
+      </ul>
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">리비아 바이어와 키프러스 자금 파트너를 동시에 설득하여 L/C → T/T 결제 조건 전환에 성공, 연간 USD 100,000 독점 계약을 체결했습니다.</div>
+      </div>`
+  },
+  'skill-2': {
+    title: '수출 실무 전반',
+    summary: 'MOQ 협의부터 인허가 단독 리딩까지 — 수출의 전 과정을 직접 수행합니다.',
+    body: `
+      <h4>주요 활동</h4>
+      <ul>
+        <li>MOQ·공급단가·패킹 리스트 관리, PI·견적서 작성</li>
+        <li>국가별 인허가 대응: 베트남, 인도네시아 BPOM, 중국 위생허가, 일본 위생성 보조</li>
+        <li>브라질 ANVISA 인허가 단독 리딩</li>
+        <li>영국 비건 소사이어티 3년 계약 단독 리딩</li>
+        <li>마케팅 에셋 제공 및 현지 운영 지원</li>
+      </ul>
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">브라질 ANVISA 인허가를 외부 에이전시 없이 단독으로 리딩하여 24종 제품 샘플 발송까지 완료. 이후 동일 프로세스를 체크리스트로 자산화했습니다.</div>
+      </div>`
+  },
+  'skill-3': {
+    title: '전시회 기획·VMD',
+    summary: '인포데스크형 부스를 체험형 매장으로 전환하여 현장 샘플 매출 6.1배 성장을 이끌었습니다.',
+    body: `
+      <h4>주요 활동</h4>
+
+      <div class="modal-subhead"><i class="fas fa-store"></i> 캔톤페어 매장형 부스 구조 제안</div>
+      <ul><li>기존 인포데스크형 → 체험형 매장으로 전환, 현장 샘플 매출 신장 기여 (800만 → 4,900만)</li></ul>
+      <div class="modal-flow">
+        <img src="originalbooth.png" alt="기존 인포데스크형 부스">
+        <div class="arrow">→</div>
+        <img src="boothdesign.png" alt="부스 기획 시안">
+        <div class="arrow">→</div>
+        <img src="newbooth1.JPG" alt="실제 부스 1">
+        <img src="newbooth2.JPG" alt="실제 부스 2">
+        <img src="newbooth3.JPG" alt="실제 부스 3">
+      </div>
+
+      <div class="modal-subhead"><i class="fas fa-paint-brush"></i> 포맥스 POP 기획, 디자인 및 발주</div>
+      <div class="modal-flow">
+        <img src="popdesignall.png" alt="POP 디자인 전체">
+        <div class="arrow">→</div>
+        <img src="pop1.jpg" alt="실제 POP 1">
+        <img src="pop2.png" alt="실제 POP 2">
+      </div>
+
+      <div class="modal-subhead"><i class="fas fa-file-alt"></i> 2025 대한임상피부치료연구회 팜플렛 기획·디자인 (80% 담당)</div>
+      <div class="modal-gallery">
+        <img src="brochuredesign.png" alt="팜플렛 디자인">
+      </div>
+
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">기존 테이블+의자 인포데스크형 부스를 제품 체험이 가능한 매장형 구조로 제안·실행하여, 바이어 체류 시간과 샘플 구매율이 동시에 증가했습니다.</div>
+      </div>`
+  },
+  'skill-4': {
+    title: '해외 지사·유통사 지원',
+    summary: '본사 브랜드·제품 교육부터 현지 VMD 기획까지 — 해외 거점의 안착을 지원합니다.',
+    body: `
+      <h4>주요 활동</h4>
+      <ul>
+        <li>2025년 베트남 신규 지사 설립 시 현지 팀 대상 본사 브랜드·제품 교육 진행</li>
+        <li>마케팅·온라인 쇼핑몰 운영 지원</li>
+      </ul>
+
+      <div class="modal-subhead"><i class="fas fa-store"></i> 2026년 1월 중국 브랜드 요요소 군산 1호점 내부 VMD 기획</div>
+      <div class="modal-gallery cols-2">
+        <img src="yoyoso2.jpg" alt="요요소 VMD 1">
+        <img src="yoyoso1.jpg" alt="요요소 VMD 2">
+      </div>
+
+      <div class="modal-subhead"><i class="fas fa-image"></i> 외벽 광고 이미지 제작</div>
+      <div class="modal-gallery cols-2">
+        <img src="yoyosowall.png" alt="요요소 외벽 광고">
+      </div>
+
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">베트남 지사 설립 초기, 현지 직원 대상으로 5개 브랜드 전 라인업 교육을 직접 기획·진행하여 현지 팀의 제품 이해도를 빠르게 끌어올렸습니다.</div>
+      </div>`
+  },
+  'skill-5': {
+    title: '프로세스 구축·자산화',
+    summary: '반복 업무를 시스템으로 전환하여 팀 전체의 생산성을 높입니다.',
+    body: `
+      <h4>주요 활동</h4>
+      <ul>
+        <li>5개 브랜드 80개 제품 4개국어(영·일·중·베) 영업 자료 번역 품질 개선 프로젝트 완료</li>
+        <li>노션 기반 웹 자료실 구축: 2개 법인·6개 브랜드·4개국어 페이지 별도 관리</li>
+      </ul>
+
+      <div class="modal-subhead"><i class="fas fa-chart-bar"></i> 전체 온라인 채널 매출 분석 사이트 구축</div>
+      <ul><li>Claude AI + GitHub로 전체 온라인 채널의 매출을 분석할 수 있는 사이트 구축·배포, 사내 매출회의 시 활용</li></ul>
+      <a href="https://samsunginternational.github.io/opsboard/" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> 사이트 바로가기</a>
+      <div class="modal-gallery cols-2">
+        <img src="opsboard1.png" alt="매출 분석 사이트 1">
+        <img src="opsboard2.png" alt="매출 분석 사이트 2">
+      </div>
+
+      <div class="modal-subhead"><i class="fas fa-pen-fancy"></i> 화장품 문안 생성 사이트 직접 제작·배포</div>
+      <ul>
+        <li>Claude AI API + GitHub로 직접 제작, 작업 시간 2~3일 → 1일 이내 단축 (약 67%)</li>
+        <li>20회 이상 버전 업데이트</li>
+      </ul>
+      <a href="https://samsunginternational.github.io/copy-generator/" target="_blank" class="modal-link"><i class="fas fa-external-link-alt"></i> 사이트 바로가기 (API 입력 필요, 외부 접근 불가)</a>
+      <div class="modal-gallery cols-2">
+        <img src="copy1.png" alt="문안 생성 사이트 1">
+        <img src="copy2.png" alt="문안 생성 사이트 2">
+      </div>
+
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">비개발자임에도 Claude AI API와 GitHub를 활용하여 사내 문안 생성 웹 서비스와 매출 분석 대시보드를 직접 구축·배포. 실무에 정착시켜 팀 전체가 활용하고 있습니다.</div>
+      </div>`
+  },
+  'skill-6': {
+    title: '브랜드·콘텐츠 기획',
+    summary: '제품 기획부터 IP 콜라보, 채널 운영까지 — 브랜드를 만들고 키웁니다.',
+    body: `
+      <h4>주요 활동</h4>
+      <ul>
+        <li>5개 브랜드 60종 제품 기획·출시</li>
+        <li>디즈니 IP × 텐바이텐 콜라보 기획</li>
+        <li>쿠팡 7개월 단품 매출 3,000만 원 달성</li>
+        <li>인플루언서·홈쇼핑 협력 계약 체결</li>
+      </ul>
+      <div class="episode-box">
+        <div class="ep-title">대표 에피소드</div>
+        <div class="ep-text">디즈니 IP 라이선스를 활용한 텐바이텐 콜라보 제품을 기획하여, 브랜드 인지도 확대와 신규 채널 매출을 동시에 달성했습니다.</div>
+      </div>`
+  },
+  'proj-canton': {
+    title: '캔톤페어 VMD·부스 전시 기획 및 현장 영업',
+    summary: '현장 샘플 매출 800만 → 4,900만 원, 6.1배 성장',
+    body: `
+      <h4>타임라인</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">기존</div><div class="tl-text">인포데스크형 부스 운영, 현장 샘플 매출 800만 원</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1회차</div><div class="tl-text">매장형 부스 전환 제안·실행, 현장 샘플 매출 1,400만 원 달성</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2회차</div><div class="tl-text">부스 규모 확장, 2개 브랜드 POP 직접 디자인, 매출 1,700만 원</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">3회차</div><div class="tl-text">부스 규모 2배 확장, 200명+ 바이어 단독 응대, 매출 4,900만 원 달성</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">6.1배</div><div class="lab">매출 성장</div></div>
+        <div class="modal-metric"><div class="val">200+</div><div class="lab">바이어 응대</div></div>
+        <div class="modal-metric"><div class="val">4개국</div><div class="lab">신규 수출 개척</div></div>
+        <div class="modal-metric"><div class="val">2배</div><div class="lab">부스 규모 확장</div></div>
+      </div>`
+  },
+  'proj-uae': {
+    title: 'UAE — Enough Glow (뷰티 유통)',
+    summary: '캔톤페어 단독 응대에서 아랍권 7개국 연간 USD 100,000 독점 유통 계약까지',
+    body: `
+      <h4>타임라인</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 5월</div><div class="tl-text">춘계 캔톤페어 단독 응대 및 사업 상담 → 현장 1차 계약 및 오더 완료 (4 SKU · 4,000유닛)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 10월</div><div class="tl-text">중동 7개국 연간 USD 100,000 독점 유통 계약 체결 상담</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 1월</div><div class="tl-text">바이어 한국 방문 (서울호텔~남원 공장 견학 플랜 준비, 이슬람 문화권 고려한 식사 선정 등 의전 진행)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 2월</div><div class="tl-text">2차 오더 22 SKU · 14,500유닛 (USD 40,265) 수출 완료</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">USD 100K</div><div class="lab">연간 독점 유통 계약</div></div>
+        <div class="modal-metric"><div class="val">22 SKU</div><div class="lab">2차 발주 규모</div></div>
+        <div class="modal-metric"><div class="val">14,500</div><div class="lab">유닛 (2차)</div></div>
+        <div class="modal-metric"><div class="val">7개국</div><div class="lab">아랍권 커버리지</div></div>
+      </div>`
+  },
+  'proj-libya': {
+    title: '리비아 — Advanced HealthCare (의료기기 업체)',
+    summary: 'L/C → T/T 결제 조건 협상 타결, 연간 USD 100,000 독점 계약 체결',
+    body: `
+      <h4>타임라인</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 10월</div><div class="tl-text">추계 캔톤페어 단독 응대 및 사업 상담</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 1월</div><div class="tl-text">결제 조건 협상 타결: L/C → T/T 전환 (리비아 바이어·키프러스 자금 파트너 동시 설득)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 1월</div><div class="tl-text">연간 USD 100,000 독점 유통 계약 체결 및 1차 오더 24 SKU · USD 32,181 완료</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">USD 100K</div><div class="lab">연간 독점 계약</div></div>
+        <div class="modal-metric"><div class="val">24 SKU</div><div class="lab">1차 오더</div></div>
+        <div class="modal-metric"><div class="val">USD 32,181</div><div class="lab">1차 오더 금액</div></div>
+      </div>
+      <div class="episode-box">
+        <div class="ep-title">L/C → T/T 협상 에피소드</div>
+        <div class="ep-text">리비아는 해외 송금 규제가 엄격하여 바이어가 키프러스에 자금 파트너를 두고 있었습니다. L/C 결제를 요구하는 바이어와 T/T를 원하는 본사 사이에서, 키프러스 파트너를 직접 설득하여 T/T 결제 조건으로 전환하는 데 성공했습니다.</div>
+      </div>`
+  },
+  'proj-brazil': {
+    title: '브라질 — Nutrimax International (건강식품·의약외품 수입)',
+    summary: '현지 수요 분석 기반 라인업 역제안 + ANVISA 인허가 단독 리딩',
+    body: `
+      <h4>타임라인</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 10월</div><div class="tl-text">추계 캔톤페어 단독 응대 및 상담</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 10월</div><div class="tl-text">현지 수요 분석 기반 시카·여드름 케어 라인업 역제안</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 11월</div><div class="tl-text">1차 오더 4 SKU · 4,000유닛 완료</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">진행 중</div><div class="tl-text">추가 24종 샘플 발송 (ANVISA 인허가 연계)</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">4 SKU</div><div class="lab">초도 수출</div></div>
+        <div class="modal-metric"><div class="val">4,000</div><div class="lab">유닛</div></div>
+        <div class="modal-metric"><div class="val">24종</div><div class="lab">추가 샘플</div></div>
+      </div>`
+  },
+  'proj-mexico': {
+    title: '멕시코 — Pame Pérez clínica & Spa (피부과)',
+    summary: '1차 오더 대비 2차 발주 수량 2배 확대, 바이어 방한 미팅까지 연결',
+    body: `
+      <h4>타임라인</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 5월</div><div class="tl-text">춘계 캔톤페어 상담 진행 (대표님과 함께)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2025년 8월</div><div class="tl-text">1차 오더 완료 (4 SKU · 4,000유닛)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 3월</div><div class="tl-text">2차 오더 완료 (발주 수량 2배 확대)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026년 5월</div><div class="tl-text">바이어 한국 성남 지사 방문 시 줌 미팅 참여</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">4 SKU</div><div class="lab">1차 오더</div></div>
+        <div class="modal-metric"><div class="val">2배</div><div class="lab">2차 볼륨 확대</div></div>
+      </div>`
+  },
+  'proj-uk': {
+    title: '영국 — Oskiino (MTS 기반 스킨케어 브랜드)',
+    summary: '마이크로니들링 특허 기기 전용 앰플 12종 ODM 상담부터 CEO 방한 미팅까지 전 과정 리딩',
+    body: `
+      <h4>진행 과정</h4>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">상담</div><div class="tl-text">MTS 기반 스킨케어 브랜드 런칭을 위한 포뮬레이션·제형 상담 진행</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">샘플링</div><div class="tl-text">5종 신제품 샘플 제작 완수</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">미팅</div><div class="tl-text">메신저 소통에서 CEO 한국 방문 미팅까지 전 과정 리딩 (동시통역 및 상담 주도)</div></div>
+      </div>
+      <div class="modal-metrics">
+        <div class="modal-metric"><div class="val">12종</div><div class="lab">런칭 라인업 ODM</div></div>
+        <div class="modal-metric"><div class="val">5종</div><div class="lab">샘플 제작</div></div>
+      </div>`
+  }
+};
+
+// ── Modal Open/Close ──
+function openModal(id) {
+  const d = modals[id];
+  if (!d) return;
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('modal-summary').textContent = d.summary;
+  document.getElementById('modal-body').innerHTML = d.body;
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); document.getElementById('lightbox').classList.remove('active'); }
+});
+
+// ── Back to Top ──
+const btt = document.getElementById('backToTop');
+window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 600); });
+
+// ── Lightbox (delegate) ──
+document.addEventListener('click', e => {
+  const img = e.target;
+  if (img.tagName === 'IMG' && (img.closest('.modal-gallery') || img.closest('.modal-flow') || img.closest('.canton-gallery'))) {
+    e.stopPropagation();
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = img.src;
+    lb.classList.add('active');
+  }
+});
+</script>
+
+</body>
+</html>
