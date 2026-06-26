@@ -496,12 +496,28 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
         <img src="canton2.jpg" alt="캔톤페어 제품 설명" style="width:100%; height:340px; object-fit:cover; object-position:top; border-radius:12px;">
         <img src="canton3.jpg" alt="캔톤페어 현장 영업" style="width:100%; height:340px; object-fit:cover; object-position:top; border-radius:12px;">
       </div>
-      <div class="growth-chart">
-        <div class="growth-col"><div class="growth-val" style="color:var(--text-muted);">800만</div><div class="growth-bar" style="height:16%;background:#bbb;"></div><div class="growth-label">기존</div></div>
-        <div class="growth-col"><div class="growth-val" style="color:var(--blue);">1,400만</div><div class="growth-bar" style="height:29%;background:var(--blue);"></div><div class="growth-label">1회차</div></div>
-        <div class="growth-col"><div class="growth-val" style="color:var(--blue);">1,700만</div><div class="growth-bar" style="height:35%;background:var(--blue);"></div><div class="growth-label">2회차</div></div>
-        <div class="growth-col"><div class="growth-val" style="color:#00a86b;">4,900만</div><div class="growth-bar" style="height:100%;background:linear-gradient(180deg,#00a86b,#1a73e8);"></div><div class="growth-label">3회차</div></div>
-      </div>
+      <div style="display:flex; align-items:flex-end; gap:2rem; justify-content:center; height:180px; margin:2rem 0; padding:0 2rem; background:var(--bg-gray); border-radius:16px; padding-top:1.5rem;">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1;">
+    <span style="font-family:'Poppins'; font-size:.9rem; font-weight:700; color:var(--text-muted);">800만</span>
+    <div style="width:100%; border-radius:8px 8px 0 0; background:#ccc; height:16%;"></div>
+    <span style="font-size:.8rem; color:var(--text-muted);">기존</span>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1;">
+    <span style="font-family:'Poppins'; font-size:.9rem; font-weight:700; color:var(--blue);">1,400만</span>
+    <div style="width:100%; border-radius:8px 8px 0 0; background:var(--blue); height:29%;"></div>
+    <span style="font-size:.8rem; color:var(--text-muted);">1회차</span>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1;">
+    <span style="font-family:'Poppins'; font-size:.9rem; font-weight:700; color:var(--blue);">1,700만</span>
+    <div style="width:100%; border-radius:8px 8px 0 0; background:var(--blue); height:35%;"></div>
+    <span style="font-size:.8rem; color:var(--text-muted);">2회차</span>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1;">
+    <span style="font-family:'Poppins'; font-size:.9rem; font-weight:700; color:#00a86b;">4,900만</span>
+    <div style="width:100%; border-radius:8px 8px 0 0; background:linear-gradient(180deg,#00a86b,#1a73e8); height:100%;"></div>
+    <span style="font-size:.8rem; color:var(--text-muted);">3회차</span>
+  </div>
+</div>
       <div class="click-hint-card">클릭하여 상세보기 →</div>
     </div>
 
@@ -587,8 +603,8 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
 
 <!-- FOOTER -->
 <footer id="contact">
-  <h2>팀의 언어로 일하고, </h2>
-  <p>고객의 언어로 설득합니다.</p>
+  <h2>팀의 언어로 일하고, 고객의 언어로 설득합니다.</h2>
+  <p>함께 일하고 싶으시다면</p>
   <a href="mailto:unod1465@naver.com" class="footer-btn"><i class="fas fa-envelope"></i> unod1465@naver.com</a>
   <div class="footer-bottom">&copy; 2026 정인하 (Inha Jung). All rights reserved.</div>
 </footer>
@@ -928,21 +944,6 @@ document.addEventListener('click', e => {
   window.goSlide = function(i){ cur = i; update(); };
   setInterval(() => { cur = (cur + 1) % total; update(); }, 4000);
 })();
-// ── Skill Bar Animation ──
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        const w = bar.style.width;
-        bar.style.width = '0';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => { bar.style.width = w; });
-        });
-      });
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skills-section').forEach(el => skillObs.observe(el));
 </script>
 
 </body>
