@@ -224,6 +224,8 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
   .growth-chart{gap:1.5rem;height:120px;}
   .modal{margin:1rem;max-height:90vh;}
   .modal-header,.modal-body{padding:1.5rem;}
+  .about-right{padding:0 1.2rem;}
+  .profile-info{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   .about-info{grid-template-columns:1fr;}
@@ -232,6 +234,7 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
   .section{padding:4rem 1.2rem;}
   .project-card{padding:1.5rem;}
   .canton-gallery{grid-template-columns:1fr !important;}
+  .tools-grid{grid-template-columns:1fr;}
 }
 /* ABOUT SLIDER */
 .about-slider { position:relative; width:100%; aspect-ratio:3/4; border-radius:12px; overflow:hidden; }
@@ -255,6 +258,14 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
 .skill-bar-score { font-size:.75rem; color:var(--text-muted); }
 .skill-bar-track { height:6px; background:var(--bg-gray); border-radius:100px; overflow:hidden; }
 .skill-bar-fill { height:100%; border-radius:100px; background:var(--blue-gradient); transition:width 1s ease; }
+/* TOOLS SECTION */
+.tools-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.6rem 3rem; }
+.tool-bar-item { margin-bottom:.4rem; }
+.tool-bar-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
+.tool-bar-name { font-size:.85rem; font-weight:500; color:var(--dark); }
+.tool-bar-score { font-size:.75rem; color:var(--text-muted); }
+.tool-bar-track { height:5px; background:var(--border); border-radius:100px; overflow:hidden; }
+.tool-bar-fill { height:100%; border-radius:100px; background:var(--blue-gradient); }
 </style>
 </head>
 <body>
@@ -332,9 +343,13 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
     <div><div class="info-label">학력</div><div class="info-value">부산대학교 경영학과<br>2025년 2월 졸업</div></div>
   </div>
   <div class="profile-info-item">
-    <i class="fas fa-briefcase"></i>
-    <div><div class="info-label">경력</div><div class="info-value">(주)삼성인터네셔널<br>브랜드총괄 주임 · 2024.07~2026.06</div></div>
+  <i class="fas fa-briefcase"></i>
+  <div>
+    <div class="info-label">경력</div>
+    <div class="info-value">(주)삼성인터네셔널 · 2024.07~2026.06<br>
+    브랜드총괄팀 인턴 → 사원 → 주임</div>
   </div>
+</div>
   <div class="profile-info-item">
     <i class="fas fa-envelope"></i>
     <div><div class="info-label">이메일</div><div class="info-value">unod1465@naver.com</div></div>
@@ -344,47 +359,51 @@ footer p { font-size:.9rem; margin-bottom:2rem; }
     <div><div class="info-label">거주지</div><div class="info-value">부산광역시</div></div>
   </div>
 </div>
-
-<!-- 스킬 레벨 -->
-<div class="skills-section fade-up">
-  <div class="skills-section-title">Tools & Skills</div>
-
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">Word · PowerPoint</span><span class="skill-bar-score">5 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">Excel</span><span class="skill-bar-score">4 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">Adobe Photoshop · Illustrator</span><span class="skill-bar-score">5 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">Figma · Canva</span><span class="skill-bar-score">4 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">Notion</span><span class="skill-bar-score">5 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">ChatGPT · Gemini · Claude</span><span class="skill-bar-score">5 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%"></div></div>
-  </div>
-  <div class="skill-bar-item">
-    <div class="skill-bar-top"><span class="skill-bar-name">GitHub</span><span class="skill-bar-score">3 / 5</span></div>
-    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:60%"></div></div>
-  </div>
-</div>
       <a href="mailto:unod1465@naver.com" class="btn-primary fade-up">
         <i class="fas fa-paper-plane"></i> 연락하기
       </a>
     </div>
   </div>
 </section>
-
+<!-- TOOLS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-badge">Tools & Skills</span>
+      <h2>활용 툴 & 스킬</h2>
+    </div>
+    <div class="tools-grid fade-up">
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">Word · PowerPoint</span><span class="tool-bar-score">5 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">Adobe Photoshop · Illustrator</span><span class="tool-bar-score">5 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">Excel</span><span class="tool-bar-score">4 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">Figma · Canva</span><span class="tool-bar-score">4 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">Notion</span><span class="tool-bar-score">5 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">ChatGPT · Gemini · Claude</span><span class="tool-bar-score">5 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="tool-bar-item">
+        <div class="tool-bar-top"><span class="tool-bar-name">GitHub</span><span class="tool-bar-score">3 / 5</span></div>
+        <div class="tool-bar-track"><div class="tool-bar-fill" style="width:60%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- SKILLS (6개) -->
 <section id="skills" class="section section-gray">
   <div class="section-inner">
